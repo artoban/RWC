@@ -11,6 +11,8 @@ public class Main {
 
         File file = new File(args[1]);
 
+        file.setWritable(true);
+
         if(file.exists()){
             file.delete();
         }
@@ -60,7 +62,9 @@ public class Main {
             StringBuilder builder = new StringBuilder();
             builder.append(line);
             builder.reverse();
-            line = builder.substring(0, builder.length());
+            if(!line.isEmpty()) {
+                line = builder.substring(0, builder.length() - 1);
+            }
 
             if(!line.trim().equals("")){
                 writeReversedFile(outputFilePath, "\n");
