@@ -59,10 +59,10 @@ public class Main {
         while ((line = reader.readLine()) != null) {
 
             //Reverse written line and add it to the output-file:
-            StringBuffer buffer = new StringBuffer(line);
-            buffer.reverse();
+            StringBuffer builder = new StringBuffer(line);
+            builder.reverse();
             if(!line.isEmpty()) {
-                line = buffer.substring(0, buffer.length() - 1);
+                line = builder.substring(0, builder.length() - 1);
             }
 
             if(!line.trim().equals("")){
